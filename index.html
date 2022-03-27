@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Learn2Sing 2.0</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/wavsufer.js"></script>
+    <!-- timeline plugin -->
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.timeline.js"></script>
+    <!-- cursor plugin -->
+    <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.min.js"></script>
+    <!-- load wav -->
+    <script src="assets/js/wavplayer.js"></script>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77" style="background: var(--bs-gray-100);--bs-body-color: var(--bs-dark);">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <a href="https://fuxi.163.com/en/index.html"><img id="logo" src="assets/img/logo.png" style="padding-left: 20px;"></img>
+        </a>>
+        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="#about">ABSTRACT</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#demo">DEMO</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background: url(&quot;assets/img/head-bg.jpg&quot;) top / cover no-repeat;height: 761px;">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading" style="font-size: 90px;color: var(--bs-dark);">Learn2Sing 2.0</h1>
+                        <p class="intro-text" style="color: var(--bs-dark);">Diffusion and&nbsp;Mutual Information-Based Target Speaker SVS by learning from the Singing Teacher</p>
+                        <p class="intro-text" style="font-size: 20px;color: var(--bs-dark);"> Heyang Xue<sup>1</sup>, Xinsheng Wang<sup>2</sup>, Yongmao Zhang<sup>2</sup>, Lei Xie<sup>12</sup>, Pengcheng Zhu<sup>3</sup>Mengxiao Bi<sup>3</sup>
+                        Audio, Speech and Language Processing Group (ASLP@NPU), <sup>1</sup>School of Software, <sup>2</sup> School of Computer Science, Northwestern Polytechnical University, Xian, China<br />
+                        <sup>3</sup>Fuxi AI Lab, NetEase Inc., Hangzhou, China</p>  
+                    </div>
+                    <div class="col-lg-5 d-flex flex-row justify-content-around mx-auto" style="font-size: 22px;color: var(--bs-blue);">
+                        <a href="#">arxiv</a>
+                        <a href="#">code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="background: url(&quot;assets/img/body-bg.jpg&quot;);">
+        <section class="text-center content-section" id="about" style="color: var(--bs-body-color);padding: 150px 0px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h2>ABSTRACT</h2>
+                        <p>Building a high-quality singing corpus for a person who is not good at singing is non-trivial, thus making it challenging to create a singing voice synthesizer for this person. Learn2Sing is dedicated to synthesizing the singing
+                            voice of a speaker without his or her singing data by learning from data recorded by others, i.e., the singing teacher. Inspired by the fact that pitch is the key style factor to distinguish singing from speaking voice, the
+                            proposed Learn2Sing 2.0 first generates the preliminary acoustic feature with averaged pitch value in the phone level, which allows the training of this process for different styles, i.e., speaking or singing, share same conditions
+                            except for the speaker information. Then, conditioned on the specific style, a diffusion decoder, which is accelerated by a fast sampling algorithm during the inference stage, is adopted to gradually restore the final acoustic
+                            feature. During the training, to avoid the information confusion of the speaker embedding and the style embedding, mutual information is employed to restrain the learning of speaker embedding and style embedding. Experiments
+                            show that the proposed approach is capable of synthesizing high-quality singing voice for the target speaker without singing data with 10 decoding steps. Moreover, the ablation study indicates the effectiveness of each component
+                            and the good design of Learn2Sing 2.0.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-center demo-section content-section" id="demo" style="color: var(--bs-body-color);background: transparent;padding: 150px 0px;">
+            <div class="container">
+                <div class="col-lg-10 mx-auto">
+                    <h1>DEMO</h1>
+                    <p>We believe that only complete songs can demonstrate the performance of an approach, here are four complete Chinese songs generated by Learn2Sing 2.0 for each speaker.</p>
+                    <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="teacher" href="#teacher" role="button" style="width: 100%;background: var(--bs-gray-200);font-size: 22px;margin:10px 0px;">TEACHER</a>
+                        <div class="collapse show" id="teacher" style="border-width: 1px;">
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-size: 20px;">Song name</th>
+                                            <th style="font-size: 20px;">Results</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td valign="middle"><i>怎样</i></td>
+                                            <td>
+                                                <div class="t1">
+                                                    <script>
+                                                        render(1, ".t1", 'assets/audio/teacher/learn2sing_2_teacher_zy.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>爱要坦荡荡</i></td>
+                                            <td>
+                                                <div class="t2">
+                                                    <script>
+                                                        render(2, ".t2", 'assets/audio/teacher/learn2sing_2_teacher_aytdd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>红色高跟鞋</i></td>
+                                            <td>
+                                                <div class="t3">
+                                                    <script>
+                                                        render(3, ".t3", 'assets/audio/teacher/learn2sing_2_teacher_hsggx.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i><没那么简单/i></td>
+                                            <td>
+                                                <div class="t4">
+                                                    <script>
+                                                        render(4, ".t4", 'assets/audio/teacher/learn2sing_2_teacher_mnmjd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="student1" href="#student1" role="button" style="width: 100%;background: var(--bs-gray-200);font-size: 22px;margin:10px 0px;">Student 2</a>
+                        <div class="collapse show" id="student1" style="border-width: 1px;">
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-size: 20px;">Song name</th>
+                                            <th style="font-size: 20px;">Results</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td valign="middle"><i>怎样</i></td>
+                                            <td>
+                                                <div class="s21">
+                                                    <script>
+                                                        render(5, ".s21", 'assets/audio/student_2/learn2sing_2_student_2_zy.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>爱要坦荡荡</i></td>
+                                            <td>
+                                                <div class="s22">
+                                                    <script>
+                                                        render(6, ".s22", 'assets/audio/student_2/learn2sing_2_student_2_aytdd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>红色高跟鞋</i></td>
+                                            <td>
+                                                <div class="s23">
+                                                    <script>
+                                                        render(7, ".s23", 'assets/audio/student_2/learn2sing_2_student_2_hsggx.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>没那么简单</i></td>
+                                            <td>
+                                                <div class="s24">
+                                                    <script>
+                                                        render(8, ".s24", 'assets/audio/student_2/learn2sing_2_student_2_mnmjd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="student2" href="#student2" role="button" style="width: 100%;background: var(--bs-gray-200);font-size: 22px;margin:10px 0px;">STUDENT 1<br></a>
+                        <div class="collapse show" id="student2" style="border-width: 1px;">
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-size: 20px;">Song name</th>
+                                            <th style="font-size: 20px;">Results</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td valign="middle"><i>怎样</i></td>
+                                            <td>
+                                                <div class="s11">
+                                                    <script>
+                                                        render(9, ".s11", 'assets/audio/student_1/learn2sing_2_student_1_zy.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>爱要坦荡荡</i></td>
+                                            <td>
+                                                <div class="s12">
+                                                    <script>
+                                                        render(10, ".s12", 'assets/audio/student_1/learn2sing_2_student_1_aytdd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>红色高跟鞋</i></td>
+                                            <td>
+                                                <div class="s13">
+                                                    <script>
+                                                        render(11, ".s13", 'assets/audio/student_1/learn2sing_2_student_1_hsggx.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="middle"><i>没那么简单</i></td>
+                                            <td>
+                                                <div class="s14">
+                                                    <script>
+                                                        render(12, ".s14", 'assets/audio/student_1/learn2sing_2_student_1_mnmjd.wav');
+                                                    </script>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-center content-section" id="contact" style="color: var(--bs-body-color);padding: 100px 0px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Contact</h2>
+                        <p>Email: geminiwelkin@gmail.com, xueheyang@corp.netease.com</p>
+
+                        <ul class="list-inline banner-social-buttons">
+                            <!-- <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-envelope-o fa-fw"></i><span -->
+                                        <!-- class="network-name">&nbsp; GMail</span></button></li> -->
+                            <!-- <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-twitter fa-fw"></i><span -->
+                                        <!-- class="network-name">&nbsp;Twitter</span></button></li> -->
+                            <li class="list-inline-item">&nbsp;<button onclick="location.href='https://github.com/WelkinYang'" class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-github fa-fw"></i><span
+                                        class="network-name">&nbsp;Github</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer style="background: url(&quot;assets/img/foot-bg.jpg&quot;);">
+        <div class="container text-center">
+            <p></p>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+</body>
+
+</html>
