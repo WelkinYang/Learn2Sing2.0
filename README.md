@@ -8,7 +8,7 @@ Official implementation of Learn2Sing 2.0. For all details check out our paper s
 
 ## Abstract
 
-**Demo page** with voiced abstract: [link](https://welkinyang.github.io/Learn2Sing2.0/).
+**Demo page** : [link](https://welkinyang.github.io/Learn2Sing2.0/).
 
 Building a high-quality singing corpus for a person who is not good at singing is non-trivial, thus making it challenging to create a singing voice synthesizer for this person. Learn2Sing is dedicated to synthesizing the singing voice of a speaker without his or her singing data by learning from data recorded by others, i.e., the singing teacher. Inspired by the fact that pitch is the key style factor to distinguish singing from speaking voice, the proposed Learn2Sing 2.0 first generates the preliminary acoustic feature with averaged pitch value in the phone level, which allows the training of this process for different styles, i.e., speaking or singing, share same conditions except for the speaker information. Then, conditioned on the specific style, a diffusion decoder, which is accelerated by a fast sampling algorithm during the inference stage, is adopted to gradually restore the final acoustic feature. During the training, to avoid the information confusion of the speaker embedding and the style embedding, mutual information is employed to restrain the learning of speaker embedding and style embedding. Experiments show that the proposed approach is capable of synthesizing high-quality singing voice for the target speaker without singing data with 10 decoding steps.
 
