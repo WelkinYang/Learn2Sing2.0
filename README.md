@@ -1,6 +1,6 @@
 ## Learn2Sing 2.0: Diffusion and Mutual Information-Based Target Speaker SVS by Learning from Singing Teacher
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2203.16408)
-[![GitHub Stars](https://img.shields.io/github/stars/Wendison/VQMIVC?style=social)](https://github.com/WelkinYang/Learn2Sing2.0)
+[![GitHub Stars](https://img.shields.io/github/stars/WelkinYang/Learn2Sing2.0?style=social)](https://github.com/WelkinYang/Learn2Sing2.0)
 
 Official implementation of Learn2Sing 2.0. For all details check out our paper which is accepted by Interspeech 2022 via [this](https://arxiv.org/abs/2203.16408) link.
 
